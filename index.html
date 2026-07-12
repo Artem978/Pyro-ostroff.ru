@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиальное Пиротехническое Шоу</title>
+    <!-- Подключаем Tailwind для стилей -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="./css/glightbox.min.css" />
+</head>
+<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
+    <header class="fixed top-0 inset-x-0 z-50 bg-[#01021a]/90 backdrop-blur-md border-b border-zinc-900/40 transition-all duration-300 py-2 md:py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="./assets/images/logo.png" alt="Пиро-Острофф" class="h-12 md:h-20 w-auto filter brightness-0 invert group-hover:drop-shadow-[0_0_10px_rgba(43,112,160,0.5)] transition-all">
+                </a>
+                
+                <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                    <a href="#services" data-i18n="nav_services" class="hover:text-brand-500 transition-colors">Услуги</a>
+                    <a href="#about" data-i18n="nav_about" class="hover:text-brand-500 transition-colors">О компании</a>
+                    <a href="#tech" data-i18n="nav_tech" class="hover:text-brand-500 transition-colors">Оборудование</a>
+                    <a href="#portfolio" data-i18n="nav_portfolio" class="hover:text-brand-500 transition-colors">Портфолио</a>
+                </nav>
+                <div class="flex items-center gap-4 md:gap-5">
+                    <!-- Блок переключателя языков -->
+                    <div class="flex items-center gap-2 text-[11px] md:text-xs font-semibold bg-zinc-900/40 px-2.5 py-1.5 md:px-3 md:py-2 rounded-lg border border-zinc-800/60">
+                        <button id="lang-ru" class="lang-btn text-brand-400 transition-colors focus:outline-none">RU</button>
+                        <span class="text-zinc-700">|</span>
+                        <button id="lang-tt" class="lang-btn text-gray-500 hover:text-white transition-colors focus:outline-none">TAT</button>
+                    </div>
+                    
+                    <!-- Кнопка (теперь скрывается на мобилках через hidden md:block) -->
+                    <a href="#contact" data-i18n="nav_btn" class="hidden md:block px-5 py-2.5 border border-brand-500/50 text-brand-500 text-xs font-bold uppercase tracking-wider hover:bg-brand-500 hover:text-black transition-all">Рассчитать шоу</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO SECTION) -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        
+        <!-- ВИДЕО-ФОН -->
+        <video 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            poster="https://w.forfun.com/fetch/10/104b2c89f57ebf06f52233fb1e680a6b.jpeg"
+            class="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none -translate-x-1/2 -translate-y-1/2 object-cover z-0 brightness-[0.4]"
+        >
+            <source src="./videos/back-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- ПЛЁНОЧНЫЙ ГРАДИЕНТ -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 z-10"></div>
+
+        <!-- КОНТЕНТ (ТЕКСТ И КНОПКА) -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10"></div>
+
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto animate-fade-in opacity-0">
+            <span class="text-xs md:text-sm uppercase tracking-[0.4em] text-brand-400 font-semibold mb-4 block" data-i18n="hero_subtitle">
+                Профессиональная пиротехническая компания
+            </span>
+            
+            <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight uppercase mb-6 leading-tight text-white" data-i18n="hero_title" >
+                Проектирование и создание <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-brand-400 to-white">
+                    пиротехнических шоу
+                </span>
+            </h1>
+            
+            <p class="text-gray-300 text-base md:text-lg max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-i18n="hero_desc">
+                Комплексное оформление городских и частных мероприятий на территории Республики Татарстан и по всей России. От масштабных высотных салютов до сценических спецэффектов любого уровня сложности.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#portfolio" data-i18n="hero_btn_work" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold uppercase tracking-wider hover:from-brand-400 hover:to-brand-500 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-brand-600/20 text-sm">
+                    Смотреть работы
+                </a>
+                <a href="#contact" data-i18n="hero_btn_calc" class="w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-semibold uppercase tracking-wider hover:bg-white hover:text-black hover:border-white transition-all duration-300 text-sm">
+                    Рассчитать стоимость
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden md:block">
+            <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
+                <div class="w-1 h-2 bg-brand-400 rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- ИНДИКАТОР ПРОКРУТКИ (МЫШКА СНИЗУ) -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden md:block">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+                <div class="w-1 h-2 bg-brand-400 rounded-full"></div>
+            </div>
+        </div>
+
+    </section>
+    
+<!-- БЛОК УСЛУГ -->
+    <section id="services" class="py-24 bg-zinc-950 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Заголовок секции -->
+            <div class="text-center mb-16">
+                <span data-i18n="section_services_sub" class="text-brand-500 font-semibold tracking-widest uppercase text-sm">Что мы делаем</span>
+                <h2 data-i18n="section_services_title" class="text-4xl md:text-5xl font-bold text-white mt-2 uppercase tracking-tight">Наши шоу-программы</h2>
+                <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Сетка карточек -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+                <a href="#modal-fireworks" class="glightbox-inline group relative overflow-hidden bg-zinc-900 cursor-pointer rounded-lg border border-zinc-800 hover:border-brand-500 transition-all duration-300">
+                    <div class="w-full h-80 overflow-hidden">
+                        <img src="./assets/images/services/service-fireworks.jpg" alt="Салюты" class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-500 transition-colors" data-i18n="high_altitude">Высотные фейерверки</h3>
+                        <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="etc">Нажмите, чтобы узнать подробнее</p>
+                    </div>
+                </a>
+
+                <a href="#modal-fountains" class="glightbox-inline group relative overflow-hidden bg-zinc-900 cursor-pointer rounded-lg border border-zinc-800 hover:border-brand-500 transition-all duration-300">
+                    <div class="w-full h-80 overflow-hidden">
+                        <img src="./assets/images/services/service-fountains.jpg" alt="Фонтаны" class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-500 transition-colors" data-i18n="cold_fountains">Холодные фонтаны</h3>
+                        <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="etc">Нажмите, чтобы узнать подробнее</p>
+                    </div>
+                </a>
+
+                <a href="#modal-figures" class="glightbox-inline group relative overflow-hidden bg-zinc-900 cursor-pointer rounded-lg border border-zinc-800 hover:border-brand-500 transition-all duration-300">
+                    <div class="w-full h-80 overflow-hidden">
+                        <img src="./assets/images/services/service-figures.jpg" alt="Фигуры" class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-500 transition-colors" data-i18n="fiery_figures">Огненные фигуры</h3>
+                        <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="etc">Нажмите, чтобы узнать подробнее</p>
+                    </div>
+                </a>
+
+                <a href="#modal-special" class="glightbox-inline group relative overflow-hidden bg-zinc-900 cursor-pointer rounded-lg border border-zinc-800 hover:border-brand-500 transition-all duration-300">
+                    <div class="w-full h-80 overflow-hidden">
+                        <img src="./assets/images/services/service-smoke.jpg" alt="Спецэффекты" class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-500 transition-colors" data-i18n="special_effects">Спецэффекты</h3>
+                        <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="etc">Нажмите, чтобы узнать подробнее</p>
+                    </div>
+                </a>
+
+                <a href="#modal-confetti" class="glightbox-inline group relative overflow-hidden bg-zinc-900 cursor-pointer rounded-lg border border-zinc-800 hover:border-brand-500 transition-all duration-300">
+                    <div class="w-full h-80 overflow-hidden">
+                        <img src="./assets/images/services/service-confetti.jpg" alt="Конфетти" class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-500 transition-colors" data-i18n="confetti_streamers">Конфетти и серпантин</h3>
+                        <p class="text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="etc">Нажмите, чтобы узнать подробнее</p>
+                    </div>
+                </a>
+                
+                <div class="bg-zinc-900 rounded-lg border border-brand-500/30 flex flex-col items-center justify-center p-8 text-center">
+                    <svg class="w-12 h-12 text-brand-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3 class="text-2xl font-bold text-white mb-2" data-i18n="ind_project" >Индивидуальный проект</h3>
+                    <p class="text-gray-400 text-sm mb-6" data-i18n="ind_project_text">Соберем уникальное шоу под ваш бюджет.</p>
+                    <a href="#contact" class="px-6 py-2 border border-brand-500 text-brand-500 font-bold uppercase hover:bg-brand-500 hover:text-black transition-all text-xs" data-i18n="ind_project_link" >Обсудить</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК О НАС -->
+    <section id="about" class="py-24 bg-black relative z-20 border-t border-zinc-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <span class="text-brand-400 font-semibold tracking-widest uppercase text-sm" data-i18n="nav_about" >О компании</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 tracking-tight uppercase" data-i18n="nav_title">Шоу под ключ: от идеи до запуска</h2>
+                    <div class="w-20 h-1 bg-brand-500 mt-4 mb-6"></div>
+                    
+                    <p class="text-gray-300 text-base leading-relaxed mb-6 font-light" data-i18n="nav_main_text">
+                        <span class="text-white font-semibold">«Пиро-Острофф»</span> — работает в сфере пиротехнических показов уже более 20 лет. Мы спроектировали и реализовали сотни уникальных шоу с земли, воды, крыш зданий и сложнейших архитектурных объектов (включая чашу Центра семьи «Казань» и комплекс «Minger Tower»).
+                    </p>
+                    <p class="text-gray-300 text-base leading-relaxed mb-6 font-light" data-i18n="nav_text">
+                        Мы являлись официальными партнёрами Cirque du Soleil в России и отвечали за пиротехническое оформление легендарных шоу мирового уровня. Этот статус — прямое подтверждение высочайшей экспертизы и бескомпромиссной безопасности нашей работы.
+                    </p>
+
+                    <div class="p-4 bg-zinc-900 border-l-4 border-brand-500 rounded-r-lg mb-8">
+                        <p class="text-white text-sm font-medium italic" data-i18n="nav_safe">
+                            «Безопасность — наш абсолютный приоритет! Всё остальное возможно только при её соблюдении!»
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-zinc-800" data-i18n="nav_experience">
+                        <div>
+                            <div class="text-3xl font-bold text-brand-400 mb-1">20+ лет</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-wider">Опыта в индустрии</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-brand-400 mb-1">100%</div>
+                            <div class="text-xs text-gray-400 uppercase tracking-wider">Собственный парк техники</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800" data-i18n="nav_card1">
+                        <h4 class="text-white font-bold uppercase text-sm tracking-wide mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-400"></span> Комплексный подход
+                        </h4>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed">Полный цикл ведения проекта: от разработки первоначальной идеи и 3D-проектирования до безопасного запуска и последующего демонтажа площадки.</p>
+                    </div>
+                    <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800" data-i18n="nav_card2">
+                        <h4 class="text-white font-bold uppercase text-sm tracking-wide mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-400"></span> Элитное вооружение
+                        </h4>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed">Мы работаем на передовых немецких цифровых беспроводных пусковых комплексах Galaxis и Pyrotronix, а также голландских спецэффектах MAGIC FX.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+<!-- БЛОК ПАРТНЕРОВ -->
+<section class="py-16 bg-black">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h3 class="text-xl font-bold text-white mb-12 uppercase tracking-widest" data-i18n="partners_title">Нам доверяют профессионалы</h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Лого 1 -->
+            <div class="flex items-center justify-center p-8 border border-zinc-900 hover:border-brand-500/30 transition-colors duration-300">
+                <img src="./assets/images/logos/ak-bars.svg" alt="Ак Барс" class="h-20 w-auto object-contain filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all">
+            </div>
+            <!-- Лого 2 -->
+            <div class="flex items-center justify-center p-8 border border-zinc-900 hover:border-brand-500/30 transition-colors duration-300">
+                <img src="./assets/images/logos/tatneft.svg" alt="Татнефть" class="h-20 w-auto object-contain filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all">
+            </div>
+            <!-- Лого 3 -->
+            <div class="flex items-center justify-center p-8 border border-zinc-900 hover:border-brand-500/30 transition-colors duration-300">
+                <img src="./assets/images/logos/gazprom-logo.svg" alt="Газпром" class="h-20 w-auto object-contain filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all">
+            </div>
+            <!-- Лого 4 -->
+            <div class="flex items-center justify-center p-8 border border-zinc-900 hover:border-brand-500/30 transition-colors duration-300">
+                <img src="./assets/images/logos/Coat_of_Arms_of_Kazan.svg" alt="Администрация Казани" class="h-20 w-auto object-contain filter grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all">
+            </div>
+        </div>
+
+        <!-- Ссылка на документы -->
+        <div class="mt-12">
+            <a href="./assets/images/licenses/lic01_big.jpg" class="glightbox inline-flex items-center gap-3 text-brand-500 hover:text-white transition-colors text-lg" data-gallery="docs">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                 <span class="border-b border-brand-500/50 hover:border-brand-500" data-i18n="partners_lic">Посмотреть лицензии и благодарственные письма</span>
+            </a>
+            <div class="hidden">
+                <a href="./assets/images/licenses/lic02_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic03_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic05_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic06_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic07_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic08_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic09_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic10_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic11_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic12_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic14_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic16_big.jpg" class="glightbox" data-gallery="docs"></a>
+                <a href="./assets/images/licenses/lic17_big.jpg" class="glightbox" data-gallery="docs"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- БЛОК Техника -->
+<section id="tech" class="py-24 bg-zinc-950 relative z-20 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16">
+                <span class="text-brand-500 font-semibold tracking-widest uppercase text-sm" data-i18n="tech_subtitle">Наше вооружение</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 uppercase tracking-tight" data-i18n="tech_title">Передовое оборудование</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto font-light" data-i18n="tech_text">Используем только сертифицированную технику последнего поколения от ведущих мировых производителей для обеспечения 100% надежности и безопасности шоу.</p>
+                <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-zinc-900/40 border border-zinc-850 p-8 rounded-xl hover:border-brand-500/35 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-48 rounded-lg bg-zinc-900 flex items-center justify-center p-4 mb-6 relative overflow-hidden">
+                            <img src="./assets/images/tech/ptx-c4.jpg" alt="Контроллер PTX C4" class="h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3 group-hover:text-brand-500 transition-colors">Контроллер PTX C4</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">
+                            Управляющий таймкод-контроллер последнего поколения. Обеспечивает абсолютную синхронизацию пиротехнических залпов с музыкальным сопровождением и световыми партитурами с точностью до миллисекунды.
+                        </p>
+                    </div>
+                    <div class="text-xs text-brand-500/60 uppercase tracking-widest mt-6 font-semibold">Центральное управление</div>
+                </div>
+
+                <div class="bg-zinc-900/40 border border-zinc-850 p-8 rounded-xl hover:border-brand-500/35 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-48 rounded-lg bg-zinc-900 flex items-center justify-center p-4 mb-6 relative overflow-hidden">
+                            <img src="./assets/images/tech/stadium-shot.jpg" alt="MAGICFX Stadium Shot" class="h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3 group-hover:text-brand-500 transition-colors">MAGICFX Stadium Shot</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">
+                            Самая мощная стадионная пушка в индустрии для мгновенного выброса конфетти и серпантина. Предназначена для масштабных шоу на открытых стадионах, спортивных аренах и крупных городских площадях.
+                        </p>
+                    </div>
+                    <div class="text-xs text-brand-500/60 uppercase tracking-widest mt-6 font-semibold">Спецэффекты</div>
+                </div>
+
+                <div class="bg-zinc-900/40 border border-zinc-850 p-8 rounded-xl hover:border-brand-500/35 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-48 rounded-lg bg-zinc-900 flex items-center justify-center p-4 mb-6 relative overflow-hidden">
+                            <img src="./assets/images/tech/flamemaster.jpg" alt="Flamemaster" class="h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3 group-hover:text-brand-500 transition-colors">Огневая система Flamemaster</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">
+                            Профессиональная газовая горелка с интеллектуальным контролем давления. Работает как на специализированных аэрозолях, так и на пропане, создавая контролируемые огненные вспышки и столбы пламени.
+                        </p>
+                    </div>
+                    <div class="text-xs text-brand-500/60 uppercase tracking-widest mt-6 font-semibold">Огненное шоу</div>
+                </div>
+
+                <div class="bg-zinc-900/40 border border-zinc-850 p-8 rounded-xl hover:border-brand-500/35 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-48 rounded-lg bg-zinc-900 flex items-center justify-center p-4 mb-6 relative overflow-hidden">
+                            <img src="./assets/images/tech/co2-jet.jpg" alt="CO2-Jet" class="h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3 group-hover:text-brand-500 transition-colors">Крио-генератор CO2-Jet</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">
+                            Установка направленного действия, создающая плотные столбы белого криогенного дыма высотой до 8 метров. Эффект сопровождается характерным мощным шипящим звуком и мгновенно рассеивается.
+                        </p>
+                    </div>
+                    <div class="text-xs text-brand-500/60 uppercase tracking-widest mt-6 font-semibold">Крио-эффекты</div>
+                </div>
+
+                <div class="bg-zinc-900/40 border border-zinc-850 p-8 rounded-xl hover:border-brand-500/35 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-48 rounded-lg bg-zinc-900 flex items-center justify-center p-4 mb-6 relative overflow-hidden">
+                            <img src="./assets/images/tech/mdg5.jpg" alt="MDG 5" class="h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3 group-hover:text-brand-500 transition-colors">Генератор тяжелого дыма MDG 5</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">
+                            Эталонный, бесшумный генератор экстремально плотного тяжелого дыма. Работает на жидком CO₂ или N₂, выдавая густой, идеально стелющийся по полу дым, не поднимающийся выше колена.
+                        </p>
+                    </div>
+                    <div class="text-xs text-brand-500/60 uppercase tracking-widest mt-6 font-semibold">Сценический дым</div>
+                </div>
+
+                <div class="bg-zinc-900/40 border border-zinc-850 p-8 rounded-xl hover:border-brand-500/35 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-full h-48 rounded-lg bg-zinc-900 flex items-center justify-center p-4 mb-6 relative overflow-hidden">
+                            <img src="./assets/images/tech/ue-flame.jpg" alt="Universal-Effects" class="h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-3 group-hover:text-brand-500 transition-colors">Генератор пламени UE</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light">
+                            Специализированная сценическая машина от Universal-Effects для имитации языков пламени. Создает завораживающий, абсолютно реалистичный визуальный эффект без использования опасных горючих газов.
+                        </p>
+                    </div>
+                    <div class="text-xs text-brand-500/60 uppercase tracking-widest mt-6 font-semibold">Имитация огня</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--Портфолио-->
+    <section id="portfolio" class="py-24 bg-black relative z-20 border-t border-zinc-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+            <span class="text-brand-500 font-semibold tracking-widest uppercase text-sm" data-i18n="portfolio_subtitle">Наше портфолио</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 uppercase tracking-tight" data-i18n="portfolio_title">Галерея реализованных проектов</h2>
+            <div class="w-24 h-1 bg-brand-500 mx-auto mt-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+            
+            <div class="md:col-span-1 bg-zinc-950 p-4 md:p-6 rounded-xl border border-zinc-900 md:sticky md:top-24 z-30">
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4 hidden md:block">Разделы галереи</h3>
+                
+                <div class="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible gap-1.5 pb-2 md:pb-0 scrollbar-none snap-x">
+                    <button data-filter="all" class="portfolio-btn active snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-semibold transition-all w-full text-brand-500 bg-brand-500/10 border border-brand-500/20">
+                        Все работы
+                    </button>
+                    <button data-filter="salutes" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Салюты
+                    </button>
+                    <button data-filter="fireworks" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Фейерверки
+                    </button>
+                    <button data-filter="fountains" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Вспышки, Фонтаны
+                    </button>
+                    <button data-filter="panels" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Панно
+                    </button>
+                    <button data-filter="figures" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Фигуры
+                    </button>
+                    <button data-filter="water" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Водные фонтаны
+                    </button>
+                    <button data-filter="confetti" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Конфетти
+                    </button>
+                    <button data-filter="smoke" class="portfolio-btn snap-center whitespace-nowrap text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all w-full text-gray-400 hover:text-white hover:bg-zinc-900/50 border border-transparent">
+                        Мыльные пузыри / Дым
+                    </button>
+                </div>
+            </div>
+
+            <div class="md:col-span-3">
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4" id="portfolio-grid">
+                    
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="salutes">
+                        <a href="./assets/images/portfolio/salute-1-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/salute-1-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="salutes">
+                        <a href="./assets/images/portfolio/salute-2-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/salute-2-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="salutes">
+                        <a href="./assets/images/portfolio/salute-3-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/salute-3-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="salutes">
+                        <a href="./assets/images/portfolio/salute-4-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/salute-4-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="salutes">
+                        <a href="./assets/images/portfolio/salute-5-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/salute-5-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="salutes">
+                        <a href="./assets/images/portfolio/salute-6-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/salute-6-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="fireworks">
+                        <a href="./assets/images/portfolio/feir-1-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/feir-1-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fireworks">
+                        <a href="./assets/images/portfolio/feir-2-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/feir-2-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fireworks">
+                        <a href="./assets/images/portfolio/feir-3-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/feir-3-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fireworks">
+                        <a href="./assets/images/portfolio/feir-4-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/feir-4-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fireworks">
+                        <a href="./assets/images/portfolio/feir-5-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/feir-5-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fireworks">
+                        <a href="./assets/images/portfolio/feir-6-big.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/feir-6-big.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fountains">
+                        <a href="./assets/images/portfolio/fount-1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-1.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fountains">
+                        <a href="./assets/images/portfolio/fount-2.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-2.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fountains">
+                        <a href="./assets/images/portfolio/fount-3.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-3.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fountains">
+                        <a href="./assets/images/portfolio/fount-4.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-4.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fountains">
+                        <a href="./assets/images/portfolio/fount-5.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-5.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="fountains">
+                        <a href="./assets/images/portfolio/fount-6.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-6.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="panels">
+                        <a href="./assets/images/portfolio/pan-1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/pan-1.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="panels">
+                        <a href="./assets/images/portfolio/pan-2.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/pan-2.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="panels">
+                        <a href="./assets/images/portfolio/pan-3.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/pan-3.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="panels">
+                        <a href="./assets/images/portfolio/pan-4.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/pan-4.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="panels">
+                        <a href="./assets/images/portfolio/pan-5.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/pan-5.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="panels">
+                        <a href="./assets/images/portfolio/pan-6.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/pan-6.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="figures">
+                        <a href="./assets/images/portfolio/fig-1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fig-1.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="figures">
+                        <a href="./assets/images/portfolio/fig-2.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fig-2.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="figures">
+                        <a href="./assets/images/portfolio/fig-3.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fig-3.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="figures">
+                        <a href="./assets/images/portfolio/fig-4.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fig-4.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="figures">
+                        <a href="./assets/images/portfolio/fig-5.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fig-5.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="figures">
+                        <a href="./assets/images/portfolio/fig-6.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fig-6.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="water">
+                        <a href="./assets/images/portfolio/fount-1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-1.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="water">
+                        <a href="./assets/images/portfolio/fount-2.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-2.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900/60 cursor-pointer bg-zinc-950 p-2" data-category="water">
+                        <a href="./assets/images/portfolio/fount-3.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-3.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="water">
+                        <a href="./assets/images/portfolio/fount-4.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-4.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="water">
+                        <a href="./assets/images/portfolio/fount-5.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-5.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="water">
+                        <a href="./assets/images/portfolio/fount-6.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fount-6.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="confetti">
+                        <a href="./assets/images/portfolio/confetti_1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/confetti_1.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="confetti">
+                        <a href="./assets/images/portfolio/confetti_2.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/confetti_2.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="confetti">
+                        <a href="./assets/images/portfolio/confetti_3.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/confetti_3.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="confetti">
+                        <a href="./assets/images/portfolio/confetti_4.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/confetti_4.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="confetti">
+                        <a href="./assets/images/portfolio/confetti_5.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/confetti_5.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="confetti">
+                        <a href="./assets/images/portfolio/confetti_6.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/confetti_6.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="smoke">
+                        <a href="./assets/images/portfolio/fog-1.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fog-1.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="smoke">
+                        <a href="./assets/images/portfolio/fog-2.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fog-2.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="smoke">
+                        <a href="./assets/images/portfolio/fog-3.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fog-3.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="smoke">
+                        <a href="./assets/images/portfolio/fog-4.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fog-4.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="smoke">
+                        <a href="./assets/images/portfolio/fog-5.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fog-5.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-item group relative aspect-square overflow-hidden rounded-xl border border-zinc-900 cursor-pointer bg-zinc-950 p-2" data-category="smoke">
+                        <a href="./assets/images/portfolio/fog-6.jpg" class="glightbox" data-gallery="portfolio-gallery">
+                            <img src="./assets/images/portfolio/fog-6.jpg" alt="Шоу" class="w-full h-full object-contain filter brightness-90 group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute inset-2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex items-end rounded-lg">
+                                <span class="text-white text-xs font-medium">Смотреть во весь экран</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-12" id="load-more-container">
+                    <button id="load-more-btn" class="px-8 py-3.5 border border-brand-500/30 text-brand-500 font-semibold uppercase tracking-wider text-xs hover:bg-brand-500 hover:text-black hover:border-brand-500 transition-all duration-300" data-i18n="portfolio_more_btn">
+                        Показать больше проектов
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 bg-black relative z-20 border-t border-zinc-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                
+                <div class="lg:sticky lg:top-32">
+                    <span class="text-brand-400 font-semibold tracking-widest uppercase text-sm" data-i18n="contact_subtitle">Обсудить проект</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2 uppercase tracking-tight leading-tight" data-i18n="contact_title">
+                        Давайте создадим <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-brand-400 to-white">
+                            незабываемое шоу
+                        </span> вместе
+                    </h2>
+                    <div class="w-20 h-1 bg-brand-500 mt-6 mb-8"></div>
+                    
+                    <p class="text-gray-400 text-base leading-relaxed mb-10 font-light" data-i18n="contact_text">
+                        Заполните форму справа, и наши инженеры-пиротехники разработают предварительный сценарий и индивидуальную 3D-визуализацию вашего шоу под заложенный бюджет.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-400 group-hover:border-brand-500 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l5.48 2.2a1 1 0 01.58.875V17a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                            </div>
+                            <div>
+                                <!-- Россия и Татарстан -->
+                                <div class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-0.5" data-i18n="contact_regTAT">Россия и Татарстан</div>
+                                    <div class="flex flex-wrap items-center gap-x-2 text-white font-medium">
+                                        <a href="tel:+79172699321" class="hover:text-brand-400 transition-colors font-semibold tracking-wide">+7 (917) 269-93-21</a>
+                                        <span class="text-zinc-700">|</span>
+                                        <a href="tel:+79274396923" class="hover:text-brand-400 transition-colors font-semibold tracking-wide">+7 (927) 439-69-23</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- БЛОК: САМАРА И ОБЛАСТЬ -->
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-400 group-hover:border-brand-500 transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l5.48 2.2a1 1 0 01.58.875V17a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-0.5" data-i18n="contact_regSAM">Самара и Самарская область</div>
+                                    <a href="tel:+79093709961" class="text-white font-medium hover:text-brand-400 transition-colors font-semibold tracking-wide">+7 (909) 370-99-61</a>
+                                </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-brand-400 group-hover:border-brand-500 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wider font-semibold" data-i18n="contact_mail">Электронная почта</div>
+                                <a href="mailto:pyro-ostrofficial@yandex.ru" class="text-white font-medium hover:text-brand-400 transition-colors">pyro-ostrofficial@yandex.ru</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900 p-8 md:p-10 rounded-2xl border border-zinc-800 shadow-2xl backdrop-blur-sm">
+                    <h3 class="text-xl font-bold text-white mb-6" data-i18n="contact_form_title">Форма для расчета стоимости</h3>
+                    
+                <form id="contactForm" action="send.php" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" data-i18n="contact_form_name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all text-sm" placeholder="Александр">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" data-i18n="contact_form_phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all text-sm" placeholder="+7 (999) 000-00-00">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" data-i18n="contact_form_date">Дата мероприятия</label>
+                            <input type="date" id="date" name="date" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="service" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" data-i18n="contact_form_answer">Что вас интересует?</label>
+                        <div class="relative">
+                            <select id="service" name="service" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3.5 text-white focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all text-sm appearance-none cursor-pointer">
+                                <option value="all">Выбрать программу...</option>
+                                <option value="salutes">Высотные фейерверки / Салюты</option>
+                                <option value="fountains">Холодные фонтаны на сцену</option>
+                                <option value="figures">Огненные фигуры и надписи</option>
+                                <option value="effects">Спецэффекты (Тяжелый дым / Пузыри)</option>
+                                <option value="custom">Индивидуальный спецпроект</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-brand-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2" data-i18n="contact_form_details">Детали проекта (необязательно)</label>
+                        <textarea id="message" name="message" rows="4" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all text-sm resize-none" placeholder="Расскажите о масштабе события, площадке, заложенном бюджете или ваших пожеланиях..."></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold uppercase tracking-wider text-sm hover:from-brand-400 hover:to-brand-500 transition-all duration-300 shadow-xl shadow-brand-600/10" data-i18n="contact_form_submit">
+                            Отправить запрос на расчет
+                        </button>
+                    </div>
+                    
+                    <p class="text-center text-[11px] text-gray-500 font-light" data-i18n="contact_form_approval">
+                        Нажимая кнопку, вы соглашаетесь на обработку персональных данных <br>в соответствии с политикой конфиденциальности компании.
+                    </p>
+                </form>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 border-t border-zinc-900/40 relative z-20 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="flex items-center opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="./assets/images/logo.png" alt="Пиро-Острофф" class="h-16 w-auto filter brightness-0 invert">
+                </div> 
+                
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 text-xs uppercase tracking-wider font-medium text-gray-400">
+                    <a href="#services" data-i18n="nav_services" class="hover:text-brand-500 transition-colors">Услуги</a>
+                    <a href="#about" data-i18n="nav_about" class="hover:text-brand-500 transition-colors">О компании</a>
+                    <a href="#tech" data-i18n="nav_tech" class="hover:text-brand-500 transition-colors">Оборудование</a>
+                    <a href="#portfolio" data-i18n="nav_portfolio" class="hover:text-brand-500 transition-colors">Портфолио</a>
+                </div>
+
+                <div class="text-[11px] font-light text-gray-500 text-center md:text-right tracking-wide">
+                    © 1993-2026 ООО «Пиро-Острофф».
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+<!--Скрытые карточки блока услуг-->
+<div class="hidden">
+    <div id="modal-fireworks" class="p-8 bg-zinc-900 max-w-lg rounded-lg border border-zinc-800">
+        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="high_altitude">Высотные фейерверки</h3>
+        <p class="text-gray-400 leading-relaxed" data-i18n="fireworks_about">
+            Это кульминация любого события государственного масштаба. Мы создаем многоуровневые картины в небе, используя тысячи зарядов различного калибра. 
+            <br><br>
+            Наши программы синхронизированы с музыкальным сопровождением и проводятся с соблюдением строжайших протоколов безопасности. Это не просто салют — это симфония огня.
+        </p>
+    </div>
+
+    <div id="modal-fountains" class="p-8 bg-zinc-900 max-w-lg rounded-lg border border-zinc-800">
+        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="cold_fountains">Холодные фонтаны</h3>
+        <p class="text-gray-400 leading-relaxed" data-i18n="cold_fountains_about">
+            Сценическая пиротехника высочайшего качества. Эффектный «огненный дождь» или коридор из искр, который создает невероятную атмосферу для первого танца молодоженов или торжественного выхода артистов.
+            <br><br>
+            Безопасно для закрытых помещений.
+        </p>
+    </div>
+    <div id="modal-figures" class="p-8 bg-zinc-900 max-w-lg rounded-lg border border-zinc-800">
+    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="fiery_letters_and_shapes">Огненные буквы и фигуры</h3>
+    <p class="text-gray-400 leading-relaxed" data-i18n="fiery_figures_about">
+        Индивидуальное и красочное решение для любого торжества. Мы создаем уникальные поздравительные надписи, логотипы компаний, символы и целые пиротехнические картины. 
+        <br><br>
+        Это идеальный способ брендирования мероприятия или создания романтической атмосферы — цветовая гамма и сложность исполнения ограничены только вашей фантазией.
+    </p>
+    </div>
+    <div id="modal-special" class="p-8 bg-zinc-900 max-w-lg rounded-lg border border-zinc-800">
+        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="atm_special_effects">Атмосферные спецэффекты</h3>
+        <p class="text-gray-400 leading-relaxed" data-i18n="special_effects_about">
+            Создаем «магию» на площадке с помощью низко стелющегося тяжелого дыма и генераторов мыльных пузырей. 
+            <br><br>
+            Используем профессиональное оборудование на основе CO2 и сухого льда. Этот эффект идеально подходит для сцены любого размера, создавая неповторимый таинственный момент в шоу. Генераторы пузырей дополнят атмосферу, делая праздник легким и запоминающимся.
+        </p>
+    </div>
+
+    <div id="modal-confetti" class="p-8 bg-zinc-900 max-w-lg rounded-lg border border-zinc-800">
+        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="confetti_streamers">Конфетти и серпантин</h3>
+        <p class="text-gray-400 leading-relaxed" data-i18n="confetti_streamers_about">
+            Безопасный и невероятно эффектный способ украсить любой праздник — от камерных залов до концертных площадок. 
+            <br><br>
+            Наши конфетти-машины создают мощные залпы, которые радуют даже самого искушенного зрителя. Мы используем разноцветные комбинации для декора телешоу, концертов и кульминационных моментов торжества, создавая праздничный объем, который не требует использования пиротехники.
+        </p>
+    </div>
+</div>
+
+<!-- GLightbox JS -->
+<script src="./js/glightbox.min.js"></script>
+<script src="./js/translations.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
